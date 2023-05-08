@@ -1,10 +1,7 @@
-
 from tests import customerLoginButtonStepOne
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from tests import *
-
 
 driver = webdriver.Chrome()
 driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login")
