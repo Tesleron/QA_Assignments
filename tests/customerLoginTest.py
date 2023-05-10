@@ -13,7 +13,7 @@ driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/logi
 
 driver.implicitly_wait(20) # gives an implicit wait for 20 seconds
 # ---- STEP ONE -----
-loginButton = customerLoginPage.CustomerLoginPage().getLoginButton(driver)
+loginButton = loginPage.loginPage().getLoginButton(driver)
 loginButton.click()
 # ---- STEP TWO -----
 nameDropDown = nameChoosePage.NameChoosePage().getDropDownMenu(driver)
@@ -21,11 +21,6 @@ nameDropDown.select_by_visible_text("Harry Potter")
 # ---- STEP THREE -----
 loginButton = nameChoosePage.NameChoosePage().getLoginButton(driver)
 loginButton.click()
-sleep(2)
-# harryPotterName = nameChoosePage.NameChoosePage().getSpecificName(driver)
-# harryPotterName.click()
-
 sleep(5)
-
 
 driver.close()
