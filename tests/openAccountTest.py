@@ -1,12 +1,9 @@
 from time import sleep
 import sys
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from pages import LoginPage, NameChoosePage, BankManagerActionsPage
 
-
 sys.stdout = open("../Logger.txt", "w")
-
 driver = webdriver.Chrome()
 driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login")
 
@@ -15,16 +12,16 @@ driver.implicitly_wait(20) # gives an implicit wait for 20 seconds
 loginButton = LoginPage.LoginPage().getBankManagerLoginButton(driver)
 loginButton.click()
 # ---- STEP TWO -----
-openAccountButton = bankManagerActionsPage.BankManagerActionsPage().getOpenAccountButton(driver)
+openAccountButton = BankManagerActionsPage.BankManagerActionsPage().getOpenAccountButton(driver)
 openAccountButton.click()
 # ---- STEP THREE -----
-customerDropDown = bankManagerActionsPage.BankManagerActionsPage().getCustomerDropDownMenu(driver)
+customerDropDown = BankManagerActionsPage.BankManagerActionsPage().getCustomerDropDownMenu(driver)
 customerDropDown.select_by_visible_text("Ron Weasly")
-currencyDropDown = bankManagerActionsPage.BankManagerActionsPage().getCurrencyDropDownMenu(driver)
+currencyDropDown = BankManagerActionsPage.BankManagerActionsPage().getCurrencyDropDownMenu(driver)
 currencyDropDown.select_by_visible_text("Pound")
 sleep(2)
 # ---- STEP FOUR -----
-processOrderButton = bankManagerActionsPage.BankManagerActionsPage().getProcessOrderButton(driver)
+processOrderButton = BankManagerActionsPage.BankManagerActionsPage().getProcessOrderButton(driver)
 processOrderButton.click()
 sleep(1)
 alert = driver.switch_to.alert
