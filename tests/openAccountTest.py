@@ -2,7 +2,7 @@ from time import sleep
 import sys
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from pages import loginPage, nameChoosePage, bankManagerActionsPage
+from pages import LoginPage, NameChoosePage, BankManagerActionsPage
 
 
 sys.stdout = open("../Logger.txt", "w")
@@ -12,7 +12,7 @@ driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/logi
 
 driver.implicitly_wait(20) # gives an implicit wait for 20 seconds
 # ---- STEP ONE -----
-loginButton = loginPage.LoginPage().getBankManagerLoginButton(driver)
+loginButton = LoginPage.LoginPage().getBankManagerLoginButton(driver)
 loginButton.click()
 # ---- STEP TWO -----
 openAccountButton = bankManagerActionsPage.BankManagerActionsPage().getOpenAccountButton(driver)
