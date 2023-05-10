@@ -2,7 +2,8 @@ from time import sleep
 import sys
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from pages import customerLoginPage, nameChoosePage
+from pages import loginPage, nameChoosePage
+
 
 
 sys.stdout = open("../Logger.txt", "w")
@@ -16,9 +17,11 @@ loginButton = customerLoginPage.CustomerLoginPage().getLoginButton(driver)
 loginButton.click()
 # ---- STEP TWO -----
 nameDropDown = nameChoosePage.NameChoosePage().getDropDownMenu(driver)
-# nameDropDown.select_by_visible_text('Harry Potter')
-sleep(2)
+nameDropDown.select_by_visible_text("Harry Potter")
 # ---- STEP THREE -----
+loginButton = nameChoosePage.NameChoosePage().getLoginButton(driver)
+loginButton.click()
+sleep(2)
 # harryPotterName = nameChoosePage.NameChoosePage().getSpecificName(driver)
 # harryPotterName.click()
 
